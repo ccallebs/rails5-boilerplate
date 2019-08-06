@@ -18,3 +18,17 @@
 console.log('Hello World from Webpacker')
 
 import 'bulma/css/bulma.css';
+
+(function() {
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var burger = document.getElementsByClassName('burger')[0];
+        var nav = document.getElementById(burger.dataset.target);
+
+        burger.addEventListener('click', function(){
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+        });
+    });
+
+})();

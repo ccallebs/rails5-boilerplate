@@ -7,9 +7,59 @@
 
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">My Project</a>
+
+          <a role="button" class="navbar-burger burger" data-target="top-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+
+        <div id="top-navigation" class="navbar-menu">
+          <div class="navbar-start">
+            <%= link_to "Home", root_path, class: "navbar-item" %>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <%= link_to new_user_registration_path, class: "button is-small" do %>
+                    <span class="icon">
+                      <i class="fa fa-user-plus"></i>
+                    </span>
+                    <span>
+                      Register
+                    </span>
+                  <% end %>
+                </p>
+                <p class="control">
+                  <%= link_to new_user_session_path, class: "button is-small" do %>
+                    <span class="icon">
+                      <i class="fa fa-plus"></i>
+                    </span>
+                    <span>
+                      Login
+                    </span>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container">
+      <%= yield %>
+    </section>
   </body>
 </html>
